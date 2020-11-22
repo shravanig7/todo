@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <input type="text" id="new_list_item">
+        <button onclick="addItem()">Add Item</button>
+
+      
+           <script  type="text/javascript">
+            var listItems = ['Wear mask','Wash your face','Don\'t touch your face'];
+            </script> 
+
+        <script type="text/javascript">
+        function addItem(){
+            var tempItem = document.getElementById("new_list_item").value;
+            listItems.push(tempItem);
+            displayList(tempItem);
+            var tempItem = document.getElementById("new_list_item").value=" ";
+        }
+        </script>
+        <h3>YOUR TODO:</h3>
+
+        <div id="display">
+            
+            <ul id="mylists">
+                <script type="text/javascript">
+                   listItems.forEach(displayList);
+                   
+                   function displayList(item){
+                       document.getElementById("display").innerHTML += "<li>"+item+"</li>"
+                   }
+                </script>
+            </ul>
+        </div>
+    </body>
+</html>
